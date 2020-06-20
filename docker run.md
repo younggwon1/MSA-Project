@@ -1,5 +1,7 @@
 
 
+# Docker run 환경 설정
+
 # 사용자 1
 
 ### mysql Run
@@ -59,22 +61,4 @@ docker run -d -e "server.port=40001" -p 40001:40001 -e "spring.datasource.url=jd
 
 
 
-
-### jenkins 설치
-
-[jenkins docker hub](https://hub.docker.com/_/jenkins)
-
-```
-docker pull jenkins/jenkins:latest
-```
-
-139b68830b8a456cbe80fc1152fd70cf
-
-
-
-
-
-[kubernetes linux](https://waspro.tistory.com/516)
-
-[kubernetes/dashboard](https://github.com/kubernetes/dashboard)
 
