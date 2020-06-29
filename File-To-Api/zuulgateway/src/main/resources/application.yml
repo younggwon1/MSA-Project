@@ -1,0 +1,66 @@
+server:
+  port: 8011
+
+spring:
+  application:
+    name: ZuulServer
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8010/eureka/
+
+
+zuul:
+#  sensitive-headers: Cookie,Set-Cookie,Authorization
+#  ignored-headers: Access-Control-Allow-Credentials,Access-Control-Allow-Origin
+#  addProxyHeaders: true
+  routes:
+    userservice:
+      path: /userservice/**
+      serviceId: userservice
+      sensitive-headers: Cookie, Set-Cookie
+#  ribbon:
+#    eager-load:
+#      enabled: true
+#    uploadapi:
+#      path: /uploadapi/**
+#      serviceId: uploadapi
+#      sensitive-headers: Cookie,Set-Cookie
+#
+#  sensitiveHeaders:
+#  ignored-headers: Access-Control-Allow-Credentials, Access-Control-Allow-Origin
+#  sensitive-headers: Cookie,Set-Cookie
+#  ,Authorization
+#    Access-Control-Allow-Origin: "*"
+#    Access-Control-Allow-Credentials: true
+#    Access-Control-Allow-Methods: GET, POST, DELETE, OPTIONS;
+#  add-proxy-headers: true
+#  ignored-headers:  Access-Control-Allow-Credentials, Access-Control-Allow-Origin
+
+#zuul:
+#  sensitive-headers:
+#    Access-Control-Allow-Methods: GET, POST, DELETE, OPTIONS;
+#    Access-Control-Allow-Credentials: true
+#    Access-Control-Allow-Origin: "*"
+#
+#  addProxyHeaders: true
+#  routes:
+#    userservice:
+#      path: /userservice/**
+#      serviceId: userservice
+#      sensitive-headers: Cookie, Set-Cookie, Authorization
+#      stripPrefix: false
+#
+#    uploadapi:
+#      path: /uploadapi/**
+#      serviceId: uploadapi
+#      stripPrefix: false
+#      sensitive-headers: Cookie,Set-Cookie, Authorization
+
+
+#    crawlingapi:
+#      path: /crawlingapi/**
+#      serviceId: crawlingapi
+#      stripPrefix: false
+
